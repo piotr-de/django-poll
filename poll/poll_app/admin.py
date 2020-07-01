@@ -17,6 +17,8 @@ class QuestionAdmin(admin.ModelAdmin):
     ]
     inlines = [ChoiceInLine]
     list_display = ("question_text", "pub_date", "recent")
+    list_filter = ["pub_date"]
+    search_fields = ["question_text"]
 
 
 admin.site.register(Question, QuestionAdmin)
